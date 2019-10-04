@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import stories from "../data/stories.json";
 import Counter from "./counter";
+import Comments from "./comments.jsx";
 
 class Stories extends Component {
   state = {
@@ -11,16 +12,16 @@ class Stories extends Component {
     return this.state.stories.map(story => {
       return (
         <tr key={story.item_id}>
-          <Counter count={story.score}/>
+          <Counter count={story.score} />
           <td>
             <div className="stories">
               <a href="#">
                 <h2>{story.title}</h2>
               </a>
-              <p>
-                By {story.by} | on {story.submission_time.split("")[0]} |{" "}
-                <a href="#">{story.comments.length} comments</a>
-              </p>
+              <span>
+                By {story.by} | on {story.submission_time.split(" ")[0]} | 
+                <Comments comments={story.comments}/>
+              </span>
             </div>
           </td>
         </tr>
