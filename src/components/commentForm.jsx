@@ -5,14 +5,12 @@ class CommentForm extends Component {
     state = {
         item_id : 0,
         text: "",
-        by: "Mrityunjay"
     }
 
     handleComment = (e) => {
         e.preventDefault();
-        console.log(this.state.text);
         this.props.addComment({
-            item_id: this.state.item_id + 1,
+            item_id: this.state.item_id + Math.floor(Math.random()*7*Math.random()*13),
             text: this.state.text,
             by: "Mrityunjay"
         });

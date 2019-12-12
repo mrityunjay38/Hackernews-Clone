@@ -9,26 +9,36 @@ class Comments extends Component {
   };
 
   showComments = () => {
-    this.setState({ commentState: !this.state.commentState });
+    this.setState({
+      commentState: !this.state.commentState
+    });
   };
 
-  addComment = (data) => {
-      this.setState({
-          comments: this.state.comments.unshift(data)
-      });
-  }
+  addComment = newComment => {
+    this.setState({
+      comments: [...this.state.comments, newComment]
+    });
+  };
 
   render() {
-      return (<div className="Comment-section">
-        <a href="#" onClick={this.showComments}>{this.state.comments.length} comments</a>
-        { this.state.commentState ?
-        <React.Fragment>
-        <CommentForm addComment={this.addComment}/>
-        <CommentsList className="Comments-list" comments={this.state.comments}/>
-        </React.Fragment> : null }
+    console.log(this.state.comments);
+    return (
+      <div className="Comment-section">
+        <a href="#" onClick={this.showComments}>
+          {this.state.comments.length} comments
+        </a>
+        {this.state.commentState ? (
+          <div>
+            <CommentForm addComment={this.addComment} />
+            <CommentsList
+              className="Comments-list"
+              comments={this.state.comments}
+            />
+          </div>
+        ) : null}
       </div>
-      )
-    }
+    );
+  }
 }
 
 export default Comments;

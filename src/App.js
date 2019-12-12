@@ -4,7 +4,6 @@ import "./data/css/App.css";
 import Stories from "./components/stories";
 
 function App() {
-  // console.log(stories);
   return (
     <div className="App">
       <header className="App-header">
