@@ -5,18 +5,18 @@ import CommentsList from "./commentList";
 class Comments extends Component {
   state = {
     comments: this.props.comments,
-    commentState: false
+    commentState: false,
   };
 
   showComments = () => {
     this.setState({
-      commentState: !this.state.commentState
+      commentState: !this.state.commentState,
     });
   };
 
-  addComment = newComment => {
+  addComment = (newComment) => {
     this.setState({
-      comments: [...this.state.comments, newComment]
+      comments: [...this.state.comments, newComment],
     });
   };
 

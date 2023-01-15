@@ -2,18 +2,18 @@ import React, { Component } from "react";
 
 class Counter extends Component {
   state = {
-    score: this.props.count
+    score: this.props.count,
   };
 
   onUpvote = () => {
     this.setState({
-      score: this.state.score + 1
+      score: this.state.score + 1,
     });
   };
 
   onDownvote = () => {
     this.setState({
-      score: this.state.score - 1
+      score: this.state.score - 1,
     });
   };
 
