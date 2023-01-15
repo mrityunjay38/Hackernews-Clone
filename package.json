@@ -1,7 +1,8 @@
 {
   "name": "hackernews",
   "version": "0.1.0",
-  "private": true,
+  "homepage" : "https://mrityunjay38.github.io/Hackernews-Clone",
+  "private": false,
   "dependencies": {
     "react": "^16.10.1",
     "react-dom": "^16.10.1",

@@ -5,11 +5,11 @@ import Comments from "./comments.jsx";
 
 class Stories extends Component {
   state = {
-    stories: stories
+    stories: stories,
   };
 
   render() {
-    return this.state.stories.map(story => {
+    return this.state.stories.map((story) => {
       return (
         <tr key={story.item_id}>
           <Counter count={story.score} />
@@ -19,7 +19,8 @@ class Stories extends Component {
                 <h2>{story.title}</h2>
               </a>
               <span>
-                By {story.by} | on {story.submission_time.split(" ")[0]} | <Comments comments={story.comments}/>
+                By {story.by} | on {story.submission_time.split(" ")[0]} |{" "}
+                <Comments comments={story.comments} />
               </span>
             </div>
           </td>
